@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Problema de la Recta Tangente</title>
+
+  <!-- Cargar desde CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+
+  <!-- Cargar MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Cambiar a una fuente diferente */
+      margin: 0; /* Eliminar márgenes del body */
+      overflow: hidden; /* Evitar scroll no deseado */
+    }
+    .reveal {
+      width: 100vw; /* Usar el ancho completo de la ventana */
+      height: 100vh; /* Usar la altura completa de la ventana */
+    }
+    .definition {
+      background-color: #d0e7e9;
+      border-radius: 10px;
+      padding: 3px; /* Reducir padding */
+      margin-bottom: 10px;
+      border: 2px solid #007B7F;
+      font-size: 0.5em; /* Reducir tamaño de texto */
+      color: black; /* Cambiar color a negro */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .definition h3, .definition p {
+      color: black; /* Cambiar color a negro */
+      margin: 2px 0; /* Reducir márgenes */
+      text-align: center;
+    }
+    .grid-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .geogebra-container, .procedure-container {
+      width: 50%; /* Ajustar ancho para mover el texto hacia la derecha */
+    }
+    .geogebra-container iframe {
+      width: 100%;
+      height: 450px; /* Aumentar altura para un mejor ajuste */
+      border: 1px solid #e4e4e4;
+      border-radius: 4px;
+    }
+    .procedure-container ul {
+      list-style-type: disc;
+      font-size: 0.6em; /* Reducir el tamaño de la lista */
+      margin-left: 20px; /* Mover el texto hacia la derecha */
+    }
+    h2 {
+      font-size: 0.7em; /* Cambiar tamaño del título principal a 0.7em */
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    h3 {
+      font-size: 0.4em; /* Ajustar el tamaño del subtítulo */
+      margin-bottom: 5px;
+      text-align: center;
+    }
+    h4 {
+      font-size: 0.7em; /* Cambiar tamaño del texto explicativo a 0.7em */
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .equation {
+      text-align: center;
+      font-size: 1em; /* Ajustar tamaño de las ecuaciones a 1em */
+    }
+    /* Estilos para la segunda diapositiva */
+    .second-slide {
+      height: 80vh; /* Ajusta esto según sea necesario */
+    }
+    .second-slide iframe {
+      width: 100%;
+      height: 80vh; /* Hace que el iframe ocupe el 80% de la altura de la ventana */
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      
+      <!-- Primera diapositiva -->
+      <section>
+        <h2 style="font-size: 0.7em;">EL PROBLEMA DE LA RECTA TANGENTE</h2>
+        <div class="definition">
+          <h3>Definición: Recta Tangente a la Gráfica de una Función</h3>
+          <p>La recta tangente a la curva \( C: y = f(x) \) en el punto \( P(x_0, f(x_0)) \) es la recta que pasa por \( P \) y tiene pendiente:</p>
+          <p class="equation"><strong>\[ m = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \]</strong></p>
+          <p>siempre que este límite exista.</p>
+        </div>
+        <h4 style="font-size: 0.7em; text-align: center;">Procedimiento para encontrar la recta tangente a la gráfica de una función en un punto \( P \)</h4>
+        <div class="grid-container">
+          <div class="geogebra-container">
+            <iframe scrolling="no" title="Definición de derivada" src="https://www.geogebra.org/material/iframe/id/zXz3MfEf/width/1064/height/482/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri=true/rc=false/ld=false/sdz=true/ctl=false" width="1064px" height="482px" style="border:0px;"></iframe>
+          </div>
+          <div class="procedure-container">
+            <ul>
+              <li>1) Encontrar la pendiente de la secante:
+                <p class="equation">\( m_{\text{sec}} = \frac{f(x) - f(x_0)}{x - x_0} \)</p>
+              </li>
+              <li>2) Tomar el límite para encontrar la pendiente de la tangente:
+                <p class="equation">\( m_{\text{tan}} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \)</p>
+              </li>
+              <li>3) Reemplazar en la ecuación Punto-Pendiente:
+                <p class="equation">\( y - y(P) = m_{\text{tan}} (x - x(P)) \)</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Segunda diapositiva con transición -->
+      <section class="second-slide">
+        <h2>Comportamiento del Triedro de Frenet</h2>
+        <div>
+          <iframe scrolling="no" title="Triedro de Móvil de Frenet" src="https://www.geogebra.org/material/iframe/id/aUnBbH4d/width/1376/height/657/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" style="width: 100%; height: 80vh; border: 0;"></iframe>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      margin: 0.1,
+      transition: 'slide',
+      navigationMode: 'linear',
+      controls: true,
+      keyboard: true,
+      width: '100%', // Ajustar el ancho al 100%
+      height: '100%', // Ajustar la altura al 100%
+      // Asegúrate de que no haya escalado
+      minScale: 1,
+      maxScale: 1,
+      slideNumber: true,
+    });
+  </script>
+</body>
+</html>
